@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,7 @@ namespace ShoppinOnlineConsolle
         static void Main(string[] args)
         {
 
-            using (var db = new DbProductsContext())
+            using (var db = new DbProductsContext(ConfigurationManager.AppSettings["ConnStrig"]))
             {
                 var item = new Products
                 {
@@ -36,7 +37,7 @@ namespace ShoppinOnlineConsolle
                 Console.WriteLine(items[0].Id);
             }
 
-            using (var db = new DbContextUsers())
+            using (var db = new DbContextUsers(ConfigurationManager.AppSettings["ConnStrig"]))
             {
                 var items = db.ShoppingUsers.Include(i => i.SecurityInfo).ToList();
                 foreach (var item in items)
@@ -50,7 +51,7 @@ namespace ShoppinOnlineConsolle
                 }
             }
 
-            using (var db = new DbContextUsers())
+            using (var db = new DbContextUsers(ConfigurationManager.AppSettings["ConnStrig"]))
             {
                 var item = new ShoppingUser
                 {

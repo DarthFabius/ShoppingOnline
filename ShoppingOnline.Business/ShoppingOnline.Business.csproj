@@ -17,10 +17,4 @@
     <ProjectReference Include="..\ShoppingOnline.DomainModel\ShoppingOnline.DomainModel.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="System.Configuration">
-      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7\System.Configuration.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
 </Project>
