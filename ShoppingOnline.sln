@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingOnline.DomainModel", "ShoppingOnline.DomainModel\ShoppingOnline.DomainModel.csproj", "{05C41AF9-EA2C-4428-92A2-0998482F266D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingOnline.Business", "ShoppingOnline.Business\ShoppingOnline.Business.csproj", "{C61225F4-FC72-4078-BB75-84F8AD414A95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppinOnlineConsolle", "ShoppinOnlineConsolle\ShoppinOnlineConsolle.csproj", "{E26B34B8-7FF2-40AA-9782-7B3F226836F2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{05C41AF9-EA2C-4428-92A2-0998482F266D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05C41AF9-EA2C-4428-92A2-0998482F266D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05C41AF9-EA2C-4428-92A2-0998482F266D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05C41AF9-EA2C-4428-92A2-0998482F266D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C61225F4-FC72-4078-BB75-84F8AD414A95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C61225F4-FC72-4078-BB75-84F8AD414A95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C61225F4-FC72-4078-BB75-84F8AD414A95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C61225F4-FC72-4078-BB75-84F8AD414A95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E26B34B8-7FF2-40AA-9782-7B3F226836F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E26B34B8-7FF2-40AA-9782-7B3F226836F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E26B34B8-7FF2-40AA-9782-7B3F226836F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E26B34B8-7FF2-40AA-9782-7B3F226836F2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2672D3A5-2078-40DB-9F62-93DD1634B9A6}
+	EndGlobalSection
+EndGlobal
