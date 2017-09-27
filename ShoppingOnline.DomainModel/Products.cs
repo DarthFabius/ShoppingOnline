@@ -20,7 +20,7 @@ namespace ShoppingOnline.DomainModel
 
         [NotMapped]
         public IDictionary<string, string> Properties {
-            get => (IDictionary<string,string>)JsonConvert.DeserializeObject(SerializedProperties);
+            get => JsonConvert.DeserializeObject<Dictionary<string, string>>(SerializedProperties);
             set => SerializedProperties = JsonConvert.SerializeObject(value);
         }
 

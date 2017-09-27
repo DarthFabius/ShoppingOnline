@@ -14,9 +14,31 @@ namespace ShoppinOnlineConsolle
         static void Main(string[] args)
         {
 
+            using (var db = new DbProductsContext())
+            {
+                var item = new Products
+                {
+                    Id = Guid.NewGuid(),
+                    Description = "Test prodotto",
+                    ShortDescription = "TEST1",
+                    Properties = new Dictionary<string, string>
+                    {
+                        {"Item1", "Value1"},
+                        {"Item2", "Value2"}
+                    }
+                };
+
+                db.Products.Add(item);
+                db.SaveChanges();
+
+                var items = db.Products.ToList();
+
+                Console.WriteLine(items[0].Id);
+            }
+
             using (var db = new DbContextUsers())
             {
-                var items = db.ShoppingUsers.Include(i=>i.SecurityInfo).ToList();
+                var items = db.ShoppingUsers.Include(i => i.SecurityInfo).ToList();
                 foreach (var item in items)
                 {
                     Console.WriteLine(item.Id);
