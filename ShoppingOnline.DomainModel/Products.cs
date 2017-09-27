@@ -1,22 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Newtonsoft.Json;
 
 namespace ShoppingOnline.DomainModel
 {
     public class Products
     {
         [Key]
-        public Guid Id;
+        public Guid Id { get; set; }
 
         [Required]
         [MaxLength(250)]
-        public string ShortDescription;
+        public string ShortDescription { get; set; }
 
         [Required]
-        public string Description;
+        public string Description { get; set; }
 
-        public IDictionary<string, string> Properties;
+        [NotMapped]
+        public IDictionary<string, string> Properties {
+            get => (IDictionary<string,string>)JsonConvert.DeserializeObject(SerializedProperties);
+            set => SerializedProperties = JsonConvert.SerializeObject(value);
+        }
+
+        internal string SerializedProperties { get; set; }
     }
-    
 }

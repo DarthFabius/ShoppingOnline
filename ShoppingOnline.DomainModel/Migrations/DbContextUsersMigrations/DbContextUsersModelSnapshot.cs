@@ -5,10 +5,10 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
-using ShoppingOnline.Business;
+using ShoppingOnline.DomainModel.Context;
 using System;
 
-namespace ShoppingOnline.Business.Migrations
+namespace ShoppingOnline.DomainModel.Migrations.DbContextUsersMigrations
 {
     [DbContext(typeof(DbContextUsers))]
     partial class DbContextUsersModelSnapshot : ModelSnapshot

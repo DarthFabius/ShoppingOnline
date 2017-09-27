@@ -5,14 +5,14 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
-using ShoppingOnline.Business;
+using ShoppingOnline.DomainModel.Context;
 using System;
 
-namespace ShoppingOnline.Business.Migrations
+namespace ShoppingOnline.DomainModel.Migrations.DbContextUsersMigrations
 {
     [DbContext(typeof(DbContextUsers))]
-    [Migration("20170926153015_ShoppingOnline.Business.DbContextUsers")]
-    partial class ShoppingOnlineBusinessDbContextUsers
+    [Migration("20170927070624_ShoppingOnline")]
+    partial class ShoppingOnline
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

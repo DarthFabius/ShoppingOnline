@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using ShoppingOnline.Business;
 using ShoppingOnline.DomainModel;
+using ShoppingOnline.DomainModel.Context;
 
 namespace ShoppinOnlineConsolle
 {

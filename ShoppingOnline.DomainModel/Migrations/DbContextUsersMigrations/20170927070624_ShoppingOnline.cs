@@ -2,9 +2,9 @@
 using System;
 using System.Collections.Generic;
 
-namespace ShoppingOnline.Business.Migrations
+namespace ShoppingOnline.DomainModel.Migrations.DbContextUsersMigrations
 {
-    public partial class ShoppingOnlineBusinessDbContextUsers : Migration
+    public partial class ShoppingOnline : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,7 +13,7 @@ namespace ShoppingOnline.Business.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    LastLoginDateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    LastLoginDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Password = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     SessionToken = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Username = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
