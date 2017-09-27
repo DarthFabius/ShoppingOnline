@@ -25,5 +25,8 @@ namespace ShoppingOnline.DomainModel
         }
 
         internal string SerializedProperties { get; set; }
+
+        [NotMapped]
+        public SellingInfo BusinessInformation { get; set; }
     }
 }
