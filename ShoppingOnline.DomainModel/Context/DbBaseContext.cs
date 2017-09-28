@@ -5,10 +5,15 @@ namespace ShoppingOnline.DomainModel.Context
 {
     public class DbBaseContext:DbContext
     {
+        private string _connectionString;
+        public DbBaseContext(string connectionSting)
+        {
+            _connectionString = connectionSting;
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var connstr = ConfigurationManager.AppSettings["ConnStrig"];
-            optionsBuilder.UseSqlServer(connstr);
+            optionsBuilder.UseSqlServer(_connectionString);
         }
     }
 }

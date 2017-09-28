@@ -4,6 +4,10 @@ namespace ShoppingOnline.DomainModel.Context
 {
     public class DbProductsContext: DbBaseContext
     {
+        public DbProductsContext(string connectionString):base(connectionString)
+        {
+        }
+
         public DbSet<Products> Products { get; set; }
 
 
