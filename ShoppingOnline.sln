@@ -33,6 +33,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingOnline.DataAccess",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DomainModel", "DomainModel", "{014C7C55-C661-4465-9CA7-D731C859ECE1}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingOnline.ConsolleApp", "ShoppingOnline.ConsolleApp\ShoppingOnline.ConsolleApp.csproj", "{B165A62C-BD63-40D1-A0BD-EDDE8075AC7C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +81,10 @@ Global
 		{30CC6D66-1D29-4706-B6F4-3732F8A1C5C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30CC6D66-1D29-4706-B6F4-3732F8A1C5C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30CC6D66-1D29-4706-B6F4-3732F8A1C5C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B165A62C-BD63-40D1-A0BD-EDDE8075AC7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B165A62C-BD63-40D1-A0BD-EDDE8075AC7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B165A62C-BD63-40D1-A0BD-EDDE8075AC7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B165A62C-BD63-40D1-A0BD-EDDE8075AC7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
