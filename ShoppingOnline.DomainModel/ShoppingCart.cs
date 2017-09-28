@@ -6,9 +6,9 @@ namespace ShoppingOnline.DomainModel
 {
     public class ShoppingCart
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
-        public Guid User { get; set; }
+        public int User { get; set; }
 
     }
 }

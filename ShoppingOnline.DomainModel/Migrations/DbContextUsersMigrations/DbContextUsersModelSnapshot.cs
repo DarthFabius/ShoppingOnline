@@ -22,7 +22,7 @@ namespace ShoppingOnline.DomainModel.Migrations.DbContextUsersMigrations
 
             modelBuilder.Entity("ShoppingOnline.DomainModel.SecurityUserInfo", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("LastLoginDateTime");
@@ -44,7 +44,7 @@ namespace ShoppingOnline.DomainModel.Migrations.DbContextUsersMigrations
 
             modelBuilder.Entity("ShoppingOnline.DomainModel.ShippingInfo", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Address")
@@ -56,17 +56,17 @@ namespace ShoppingOnline.DomainModel.Migrations.DbContextUsersMigrations
 
                     b.Property<string>("Cco");
 
-                    b.Property<Guid>("City");
+                    b.Property<int>("City");
 
                     b.Property<string>("CivicNumber")
                         .IsRequired()
                         .HasMaxLength(50);
 
-                    b.Property<Guid>("Nation");
+                    b.Property<int>("Nation");
 
-                    b.Property<Guid>("Prov");
+                    b.Property<int>("Prov");
 
-                    b.Property<Guid?>("UserId");
+                    b.Property<int?>("UserId");
 
                     b.HasKey("Id");
 
@@ -77,13 +77,13 @@ namespace ShoppingOnline.DomainModel.Migrations.DbContextUsersMigrations
 
             modelBuilder.Entity("ShoppingOnline.DomainModel.ShoppingUser", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Email")
                         .IsRequired();
 
-                    b.Property<Guid?>("SecurityInfoId");
+                    b.Property<int?>("SecurityInfoId");
 
                     b.HasKey("Id");
 
@@ -95,7 +95,7 @@ namespace ShoppingOnline.DomainModel.Migrations.DbContextUsersMigrations
             modelBuilder.Entity("ShoppingOnline.DomainModel.ShippingInfo", b =>
                 {
                     b.HasOne("ShoppingOnline.DomainModel.ShoppingUser", "User")
-                        .WithMany("ShippingInfos")
+                        .WithMany()
                         .HasForeignKey("UserId");
                 });
 

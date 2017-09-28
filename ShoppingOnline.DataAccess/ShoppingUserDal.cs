@@ -8,9 +8,15 @@ namespace ShoppingOnline.DataAccess
 {
     public class ShoppingUserDal<T> : IDisposable, IDataAccessLayer<T> where T : class
     {
+        private readonly string _connString;
+        public ShoppingUserDal(string connString)
+        {
+            _connString = connString;
+        }
+
         public void Delete(T item)
         {
-            using (var db = new DbContextUsers())
+            using (var db = new DbContextUsers(_connString))
             {
                 db.Remove(item);
                 db.SaveChanges();
@@ -23,7 +29,7 @@ namespace ShoppingOnline.DataAccess
 
         public T Get(Guid id)
         {
-            using (var db = new DbContextUsers())
+            using (var db = new DbContextUsers(_connString))
             {
                 return db.ShoppingUsers.FirstOrDefault(i => i.Id.Equals(id)) as T;
             }
@@ -31,7 +37,7 @@ namespace ShoppingOnline.DataAccess
 
         public IList<T> GetAll()
         {
-            using (var db = new DbContextUsers())
+            using (var db = new DbContextUsers(_connString))
             {
                 return (IList<T>)db.ShoppingUsers.ToList();
             }
@@ -39,7 +45,7 @@ namespace ShoppingOnline.DataAccess
 
         public void Set(T item)
         {
-            using (var db = new DbContextUsers())
+            using (var db = new DbContextUsers(_connString))
             {
                 db.Add(item);
                 db.SaveChanges();
@@ -48,7 +54,7 @@ namespace ShoppingOnline.DataAccess
 
         public void Update(T item)
         {
-            using (var db = new DbContextUsers())
+            using (var db = new DbContextUsers(_connString))
             {
                 db.Update(item);
                 db.SaveChanges();

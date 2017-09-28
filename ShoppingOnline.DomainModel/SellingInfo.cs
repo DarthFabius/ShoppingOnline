@@ -5,11 +5,11 @@ namespace ShoppingOnline.DomainModel
 {
     public class SellingInfo
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
-        public Guid ProductId { get; set; }
+        public int ProductId { get; set; }
 
-        public float Amount { get; set; }
+        public decimal Amount { get; set; }
 
         public CurrencyType Currency { get; set; }
 

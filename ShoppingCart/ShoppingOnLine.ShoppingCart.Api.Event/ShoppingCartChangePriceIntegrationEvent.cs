@@ -15,4 +15,17 @@ namespace ShoppingOnLine.ShoppingCart.Api.Event
 
         public decimal NewPrice { get; }
     }
+
+    public class ShoppingCartNewPriceIntegrationEvent : IntegrationEvent
+    {
+        public ShoppingCartNewPriceIntegrationEvent(int productId, decimal newPrice)
+        {
+            ProductId = productId;
+            NewPrice = newPrice;
+        }
+
+        public int ProductId { get; }
+
+        public decimal NewPrice { get; }
+    }
 }

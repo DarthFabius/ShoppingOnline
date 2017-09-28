@@ -157,10 +157,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ShoppingOnline.Business\ShoppingOnline.Business.csproj">
-      <Project>{c61225f4-fc72-4078-bb75-84f8ad414a95}</Project>
-      <Name>ShoppingOnline.Business</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ShoppingOnline.DataAccess\ShoppingOnline.DataAccess.csproj">
       <Project>{30CC6D66-1D29-4706-B6F4-3732F8A1C5C6}</Project>
       <Name>ShoppingOnline.DataAccess</Name>

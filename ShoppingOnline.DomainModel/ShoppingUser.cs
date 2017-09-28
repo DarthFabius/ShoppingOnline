@@ -1,25 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ShoppingOnline.DomainModel
 {
     public class ShoppingUser
     {
         [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public virtual SecurityUserInfo SecurityInfo { get; set; }
 
         [Required]
         public string Email { get; set; }
 
+        [NotMapped]
         public virtual IList<ShippingInfo> ShippingInfos { get; set; }
     }
 
     public class SecurityUserInfo
     {
         [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [MaxLength(100)]
@@ -37,7 +39,7 @@ namespace ShoppingOnline.DomainModel
     public class ShippingInfo
     {
         [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         public string Address { get; set; }
@@ -49,9 +51,9 @@ namespace ShoppingOnline.DomainModel
         [Required]
         [MaxLength(5)]
         public string Cap { get; set; }
-        public Guid City { get; set; }
-        public Guid Prov { get; set; }
-        public Guid Nation { get; set; }
+        public int City { get; set; }
+        public int Prov { get; set; }
+        public int Nation { get; set; }
         public string Cco { get; set; }
 
         public virtual ShoppingUser User { get; set; }

@@ -9,7 +9,7 @@ namespace ShoppingOnline.DomainModel
     public class Products
     {
         [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [MaxLength(250)]

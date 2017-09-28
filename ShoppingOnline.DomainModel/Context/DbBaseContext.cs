@@ -1,11 +1,13 @@
-﻿using System.Configuration;
+﻿using System;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
 
 namespace ShoppingOnline.DomainModel.Context
 {
-    public class DbBaseContext:DbContext
+    public class DbBaseContext : DbContext
     {
-        private string _connectionString;
+        private readonly string _connectionString;
+
         public DbBaseContext(string connectionSting)
         {
             _connectionString = connectionSting;
@@ -14,6 +16,20 @@ namespace ShoppingOnline.DomainModel.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(_connectionString);
+        }
+    }
+
+    public class DesignTimeDbContextFactory<T> : IDesignTimeDbContextFactory<T>
+        where T : DbContext
+    {
+        public T CreateDbContext(string[] args)
+        {
+            var builder = new DbContextOptionsBuilder<T>();
+            builder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            var dbContext = (T)Activator.CreateInstance(
+                typeof(T),
+                builder.Options);
+            return dbContext;
         }
     }
 }
