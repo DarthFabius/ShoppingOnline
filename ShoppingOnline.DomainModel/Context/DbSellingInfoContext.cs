@@ -8,25 +8,15 @@ namespace ShoppingOnline.DomainModel.Context
 {
     public class DbSellingInfoContext : DbContext
     {
-        private static DbContextOptions _contextOptions;
 
-        public DbSellingInfoContext(string connString) : base(_contextOptions)
+        public DbSellingInfoContext(DbContextOptions<DbSellingInfoContext> options) 
+            : base(options)
         {
-            var builder = new DbContextOptionsBuilder<DbSellingInfoContext>();
-            builder.UseSqlServer(connString);
-
-            _contextOptions = builder.Options;
-        }
-
-        public DbSellingInfoContext(DbContextOptions options)
-            :base(options)
-        {
-            _contextOptions = options;
         }
 
         public DbSet<SellingInfo> SellingoInfos { get; set; }
 
-        public class DbSellingInfoContextFactory : DesignTimeDbContextFactory<DbSellingInfoContext>
-        { }
+        //public class DbSellingInfoContextFactory : DesignTimeDbContextFactory<DbSellingInfoContext>
+        //{ }
     }
 }

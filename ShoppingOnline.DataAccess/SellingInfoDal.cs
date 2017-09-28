@@ -9,53 +9,40 @@ namespace ShoppingOnline.DataAccess
     public class SellingInfoDal<T> : IDisposable, IDataAccessLayer<T> where T:class
     {
         private readonly string _connString;
-        public SellingInfoDal(string connString)
+        private DbSellingInfoContext _db;
+        public SellingInfoDal(string connString, DbSellingInfoContext db)
         {
             _connString = connString;
+            _db = db;
         }
 
         public IList<T> GetAll()
         {
-            using (var db = new DbSellingInfoContext(_connString))
-            {
-                return (IList<T>) db.SellingoInfos.ToList();
-            }
+            return (IList<T>) _db.SellingoInfos.ToList();
         }
 
         public T Get(Guid productId)
         {
-            using (var db = new DbSellingInfoContext(_connString))
-            {
-                return db.SellingoInfos.FirstOrDefault(i => i.Id.Equals(productId)) as T;
-            }
+           return _db.SellingoInfos.FirstOrDefault(i => i.Id.Equals(productId)) as T;
         }
 
         public void Set(T item)
         {
-            using (var db = new DbSellingInfoContext(_connString))
-            {
-                db.Add(item);
-                db.SaveChanges();
-            }
+            _db.Add(item);
+            _db.SaveChanges();
         }
 
         public void Update(T item)
         {
-            using (var db = new DbSellingInfoContext(_connString))
-            {
-                db.Update(item);
-                db.SaveChanges();
-            }
+            _db.Update(item);
+            _db.SaveChanges();
         }
 
         public void Delete(T item)
         {
-            using (var db = new DbSellingInfoContext(_connString))
-            {
-                db.Remove(item);
-                db.SaveChanges();
-            }
-        }
+            _db.Remove(item);
+            _db.SaveChanges();
+         }
 
         public void Dispose()
         {

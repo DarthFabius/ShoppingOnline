@@ -27,6 +27,10 @@ namespace ShoppingOnLine.Marketing.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services
+                .AddRabbitMQServiceBus("localhost")
+                .AddInMemorySubscriptionManager();
+
             services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy",
@@ -42,6 +46,8 @@ namespace ShoppingOnLine.Marketing.Api
 
             var appSettings = Configuration.GetSection("AppSettings");
             services.Configure<AppSettings>(appSettings);
+
+            services.addDBSellingInfoContext(Configuration.GetConnectionString("DefaultConnection"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
