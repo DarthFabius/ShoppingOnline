@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
-using ShoppingOnline.DomainModel;
-using ShoppingOnline.DomainModel.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace Microsoft.Extensions.DependencyInjection
+namespace ShoppingOnline.DomainModel.DependencyInjection
 {
     public static class ShoppingOnLineDomainModelContextServiceExtention
     {
@@ -25,11 +19,19 @@ namespace Microsoft.Extensions.DependencyInjection
         //    return services;
         //}
 
-        public static IServiceCollection addDBSellingInfoContext(this IServiceCollection services, string connectionString)
+        public static IServiceCollection AddDbInfoContext<T>(this IServiceCollection services, string connectionString)
+            where T : DbContext
         {
-            services.AddDbContext<DbSellingInfoContext>(options => options.UseSqlServer(connectionString));
+            services.AddDbContext<T>(options => options.UseSqlServer(connectionString));
 
             return services;
         }
+
+        //public static IServiceCollection addDBSellingInfoContext(this IServiceCollection services, string connectionString)
+        //{
+        //    services.AddDbContext<DbSellingInfoContext>(options => options.UseSqlServer(connectionString));
+
+        //    return services;
+        //}
     }
 }

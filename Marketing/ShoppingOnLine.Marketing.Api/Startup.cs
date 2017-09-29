@@ -11,6 +11,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using ShoppingOnline.DomainModel;
 using ShoppingOnline.DomainModel.Context;
+using ShoppingOnline.DomainModel.DependencyInjection;
 using ShoppingOnLine.Marketing.Api.Repository;
 
 namespace ShoppingOnLine.Marketing.Api
@@ -44,10 +45,7 @@ namespace ShoppingOnLine.Marketing.Api
 
             services.AddTransient<MarketingApiRepository>();
 
-            var appSettings = Configuration.GetSection("AppSettings");
-            services.Configure<AppSettings>(appSettings);
-
-            services.addDBSellingInfoContext(Configuration.GetConnectionString("DefaultConnection"));
+            services.AddDbInfoContext<DbSellingInfoContext>(Configuration.GetConnectionString("DefaultConnection"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

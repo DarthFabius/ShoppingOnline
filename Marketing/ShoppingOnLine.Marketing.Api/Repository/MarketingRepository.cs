@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Linq;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 using ShoppingOnline.DomainModel;
 using ShoppingOnline.DomainModel.Context;
 using ShoppingOnLine.EventBus.Abstraction;
@@ -13,13 +11,11 @@ namespace ShoppingOnLine.Marketing.Api.Repository
     public class MarketingApiRepository
     {
         IEventBus _eventBus;
-        private readonly AppSettings _appSettings;
         private DbSellingInfoContext _db;
 
-        public MarketingApiRepository(IOptions<AppSettings> appSettings, IEventBus eventBus, DbSellingInfoContext db)
+        public MarketingApiRepository(IEventBus eventBus, DbSellingInfoContext db)
         {
             _eventBus = eventBus;
-            _appSettings = appSettings.Value;
             _db = db;
         }
 
