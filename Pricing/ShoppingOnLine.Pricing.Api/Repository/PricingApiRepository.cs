@@ -8,11 +8,11 @@ using ShoppingOnLine.ShoppingCart.Api.Event;
 
 namespace ShoppingOnLine.Pricing.Api.Repository
 {
-    public class PricingRepository
+    public class PricingApiRepository
     {
         private IEventBus _eventBus;
 
-        public PricingRepository(IEventBus eventBus)
+        public PricingApiRepository(IEventBus eventBus)
         {
             _eventBus = eventBus;
         }

@@ -33,7 +33,7 @@ namespace ShoppingOnLine.Marketing.Api.Repository
             _eventBus.Publish(@event);
         }
 
-        public void InsertPrice(InsertPrice model)
+        public void InsertPrice(InsertProduct model)
         {
             //do update of DB
             

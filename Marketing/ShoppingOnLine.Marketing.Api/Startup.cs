@@ -11,7 +11,6 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using ShoppingOnline.DomainModel;
 using ShoppingOnline.DomainModel.Context;
-using ShoppingOnline.DomainModel.DependencyInjection;
 using ShoppingOnLine.Marketing.Api.Repository;
 
 namespace ShoppingOnLine.Marketing.Api

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingOnline.DomainModel", "ShoppingOnline.DomainModel\ShoppingOnline.DomainModel.csproj", "{05C41AF9-EA2C-4428-92A2-0998482F266D}"
 EndProject
@@ -37,7 +37,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingOnline.ConsolleApp"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pricing", "Pricing", "{E96764DF-C6E6-415D-B958-82C8A71604B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingOnLine.Pricing.Api", "Pricing\ShoppingOnLine.Pricing.Api\ShoppingOnLine.Pricing.Api.csproj", "{62D4FA23-8DE3-4618-980E-C15C05579854}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingOnLine.Pricing.Api", "Pricing\ShoppingOnLine.Pricing.Api\ShoppingOnLine.Pricing.Api.csproj", "{62D4FA23-8DE3-4618-980E-C15C05579854}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingOnLine.Marketing.Api.Model", "Marketing\ShoppingOnLine.Marketing.Api.Model\ShoppingOnLine.Marketing.Api.Model.csproj", "{7A447DBF-207B-4298-8050-59A2A403216C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,22 @@ Global
 		{BC815245-FFD5-4EE9-A37B-7E271572AE11}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC815245-FFD5-4EE9-A37B-7E271572AE11}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC815245-FFD5-4EE9-A37B-7E271572AE11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30CC6D66-1D29-4706-B6F4-3732F8A1C5C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30CC6D66-1D29-4706-B6F4-3732F8A1C5C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30CC6D66-1D29-4706-B6F4-3732F8A1C5C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30CC6D66-1D29-4706-B6F4-3732F8A1C5C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B165A62C-BD63-40D1-A0BD-EDDE8075AC7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B165A62C-BD63-40D1-A0BD-EDDE8075AC7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B165A62C-BD63-40D1-A0BD-EDDE8075AC7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B165A62C-BD63-40D1-A0BD-EDDE8075AC7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62D4FA23-8DE3-4618-980E-C15C05579854}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62D4FA23-8DE3-4618-980E-C15C05579854}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62D4FA23-8DE3-4618-980E-C15C05579854}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62D4FA23-8DE3-4618-980E-C15C05579854}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A447DBF-207B-4298-8050-59A2A403216C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A447DBF-207B-4298-8050-59A2A403216C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A447DBF-207B-4298-8050-59A2A403216C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A447DBF-207B-4298-8050-59A2A403216C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -95,6 +113,8 @@ Global
 		{EFDE2479-EBDC-4A74-9765-F7EA5CA197F2} = {F2245D57-F6D2-4456-B4BF-30DCCC553ED9}
 		{338644A7-A621-4B53-91A6-9DF71D88E225} = {C8AEA657-C021-479C-9ACD-716632B36FF8}
 		{BC815245-FFD5-4EE9-A37B-7E271572AE11} = {C8AEA657-C021-479C-9ACD-716632B36FF8}
+		{62D4FA23-8DE3-4618-980E-C15C05579854} = {E96764DF-C6E6-415D-B958-82C8A71604B8}
+		{7A447DBF-207B-4298-8050-59A2A403216C} = {F2245D57-F6D2-4456-B4BF-30DCCC553ED9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2672D3A5-2078-40DB-9F62-93DD1634B9A6}

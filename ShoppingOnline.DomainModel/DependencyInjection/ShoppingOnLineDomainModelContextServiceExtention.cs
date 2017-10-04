@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ShoppingOnline.DomainModel.DependencyInjection
+namespace Microsoft.Extensions.DependencyInjection
 {
     public static class ShoppingOnLineDomainModelContextServiceExtention
     {

@@ -8,6 +8,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using ShoppingOnline.DomainModel.Context;
+using ShoppingOnLine.Pricing.Api.Repository;
 
 namespace ShoppingOnLine.Pricing.Api
 {
@@ -23,7 +25,24 @@ namespace ShoppingOnLine.Pricing.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services
+                .AddRabbitMQServiceBus("localhost")
+                .AddInMemorySubscriptionManager();
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials());
+            });
+            
             services.AddMvc();
+
+            services.AddTransient<PricingApiRepository>();
+
+            services.AddDbInfoContext<DbSellingInfoContext>(Configuration.GetConnectionString("DefaultConnection"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

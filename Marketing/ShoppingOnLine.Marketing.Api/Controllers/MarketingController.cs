@@ -31,7 +31,7 @@ namespace ShoppingOnLine.Marketing.Api.Controllers
 
         // POST api/Marketing/insert
         [HttpPost("insert")]
-        public void Insert([FromBody]InsertPrice value)
+        public void Insert([FromBody]InsertProduct value)
         {
 
         }

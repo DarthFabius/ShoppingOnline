@@ -21,6 +21,7 @@
     <ProjectReference Include="..\..\EventBus\ShoppingOnLine.EventBus.InMemorySubscription\ShoppingOnLine.EventBus.InMemorySubscription.csproj" />
     <ProjectReference Include="..\..\EventBus\ShoppingOnLine.EventBus.RabbitMQ\ShoppingOnLine.EventBus.RabbitMQ.csproj" />
     <ProjectReference Include="..\..\ShoppingCart\ShoppingOnLine.ShoppingCart.Api.Event\ShoppingOnLine.ShoppingCart.Api.Event.csproj" />
+    <ProjectReference Include="..\..\ShoppingOnline.DomainModel\ShoppingOnline.DomainModel.csproj" />
   </ItemGroup>
 
 </Project>

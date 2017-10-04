@@ -10,7 +10,7 @@ namespace ShoppingOnLine.Web.Pages.Pricing
     public class IndexModel : PageModel
     {
 
-        public IEnumerable<>
+        
         public void OnGet()
         {
         }
