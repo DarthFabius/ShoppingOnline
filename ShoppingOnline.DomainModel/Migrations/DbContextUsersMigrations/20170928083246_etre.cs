@@ -1,10 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 using System.Collections.Generic;
 
 namespace ShoppingOnline.DomainModel.Migrations.DbContextUsersMigrations
 {
-    public partial class ShoppingOnline : Migration
+    public partial class etre : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,7 +13,8 @@ namespace ShoppingOnline.DomainModel.Migrations.DbContextUsersMigrations
                 name: "SecurityUserInfos",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     LastLoginDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Password = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     SessionToken = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -27,9 +29,10 @@ namespace ShoppingOnline.DomainModel.Migrations.DbContextUsersMigrations
                 name: "ShoppingUsers",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    SecurityInfoId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    SecurityInfoId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -46,15 +49,16 @@ namespace ShoppingOnline.DomainModel.Migrations.DbContextUsersMigrations
                 name: "ShippingInfos",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Cap = table.Column<string>(type: "nvarchar(5)", maxLength: 5, nullable: false),
                     Cco = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    City = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    City = table.Column<int>(type: "int", nullable: false),
                     CivicNumber = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Nation = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Prov = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    Nation = table.Column<int>(type: "int", nullable: false),
+                    Prov = table.Column<int>(type: "int", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {

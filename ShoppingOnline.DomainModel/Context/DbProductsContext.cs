@@ -2,10 +2,22 @@
 
 namespace ShoppingOnline.DomainModel.Context
 {
-    public class DbProductsContext: DbBaseContext
+    public class DbProductsContext: DbContext
     {
-        public DbProductsContext(string connectionString):base(connectionString)
+        private static DbContextOptions _contextOptions;
+
+        public DbProductsContext(string connString) : base(_contextOptions)
         {
+            var builder = new DbContextOptionsBuilder<DbProductsContext>();
+            builder.UseSqlServer(connString);
+
+            _contextOptions = builder.Options;
+        }
+
+        public DbProductsContext(DbContextOptions options)
+            :base(options)
+        {
+            _contextOptions = options;
         }
 
         public DbSet<Products> Products { get; set; }
@@ -17,5 +29,8 @@ namespace ShoppingOnline.DomainModel.Context
 
             base.OnModelCreating(modelBuilder);
         }
+
+        public class DbProductsContextFactory : DesignTimeDbContextFactory<DbProductsContext>
+        {        }
     }
 }

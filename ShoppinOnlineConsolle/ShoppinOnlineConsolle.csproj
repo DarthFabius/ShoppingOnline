@@ -35,6 +35,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\..\TFS\VODAFONE-COMMON\Libs\Castle Windsor\4.0.0\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\..\..\TFS\VODAFONE-COMMON\Libs\Castle Windsor\4.0.0\Castle.Windsor.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.EntityFrameworkCore, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.EntityFrameworkCore.2.0.0\lib\netstandard2.0\Microsoft.EntityFrameworkCore.dll</HintPath>
     </Reference>
@@ -145,12 +151,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </None>
+    <None Include="IoC.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ShoppingOnline.Business\ShoppingOnline.Business.csproj">
-      <Project>{c61225f4-fc72-4078-bb75-84f8ad414a95}</Project>
-      <Name>ShoppingOnline.Business</Name>
+    <ProjectReference Include="..\ShoppingOnline.DataAccess\ShoppingOnline.DataAccess.csproj">
+      <Project>{30CC6D66-1D29-4706-B6F4-3732F8A1C5C6}</Project>
+      <Name>ShoppingOnline.DataAccess</Name>
     </ProjectReference>
     <ProjectReference Include="..\ShoppingOnline.DomainModel\ShoppingOnline.DomainModel.csproj">
       <Project>{05c41af9-ea2c-4428-92a2-0998482f266d}</Project>

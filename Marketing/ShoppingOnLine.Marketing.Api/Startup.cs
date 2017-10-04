@@ -4,10 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using ShoppingOnline.DomainModel;
+using ShoppingOnline.DomainModel.Context;
+using ShoppingOnline.DomainModel.DependencyInjection;
 using ShoppingOnLine.Marketing.Api.Repository;
 
 namespace ShoppingOnLine.Marketing.Api
@@ -24,6 +28,10 @@ namespace ShoppingOnLine.Marketing.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services
+                .AddRabbitMQServiceBus("localhost")
+                .AddInMemorySubscriptionManager();
+
             services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy",
@@ -36,6 +44,8 @@ namespace ShoppingOnLine.Marketing.Api
             services.AddMvc();
 
             services.AddTransient<MarketingApiRepository>();
+
+            services.AddDbInfoContext<DbSellingInfoContext>(Configuration.GetConnectionString("DefaultConnection"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

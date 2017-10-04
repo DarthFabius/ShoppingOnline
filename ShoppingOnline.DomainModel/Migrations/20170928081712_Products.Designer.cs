@@ -11,9 +11,10 @@ using System;
 namespace ShoppingOnline.DomainModel.Migrations
 {
     [DbContext(typeof(DbProductsContext))]
-    partial class DbProductsContextModelSnapshot : ModelSnapshot
+    [Migration("20170928081712_Products")]
+    partial class Products
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
