@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,9 +21,9 @@
     <ProjectReference Include="..\..\EventBus\ShoppingOnLine.EventBus.Abstraction\ShoppingOnLine.EventBus.Abstraction.csproj" />
     <ProjectReference Include="..\..\EventBus\ShoppingOnLine.EventBus.InMemorySubscription\ShoppingOnLine.EventBus.InMemorySubscription.csproj" />
     <ProjectReference Include="..\..\EventBus\ShoppingOnLine.EventBus.RabbitMQ\ShoppingOnLine.EventBus.RabbitMQ.csproj" />
-    <ProjectReference Include="..\..\ShoppingCart\ShoppingOnLine.ShoppingCart.Api.Event\ShoppingOnLine.ShoppingCart.Api.Event.csproj" />
     <ProjectReference Include="..\..\ShoppingOnline.DataAccess\ShoppingOnline.DataAccess.csproj" />
     <ProjectReference Include="..\..\ShoppingOnline.DomainModel\ShoppingOnline.DomainModel.csproj" />
+    <ProjectReference Include="..\..\ShoppingOnLine.Pricing.Api.Event\ShoppingOnLine.Pricing.Api.Event.csproj" />
   </ItemGroup>
 
 </Project>

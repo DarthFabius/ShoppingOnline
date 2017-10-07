@@ -8,8 +8,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using ShoppingOnLine.ShoppingCart.Api.Event;
+using ShoppingOnLine.Pricing.Api.Event;
 using ShoppingOnLine.EventBus.Abstraction;
+using ShoppingOnLine.ShoppingCart.Api.Event;
 
 namespace ShoppingOnLine.ShoppingCart.Api
 {
@@ -58,7 +59,7 @@ namespace ShoppingOnLine.ShoppingCart.Api
         protected virtual void ConfigureEventBus(IApplicationBuilder app)
         {
             var eventBus = app.ApplicationServices.GetRequiredService<IEventBus>();
-            eventBus.Subscribe<ShoppingCartChangePriceIntegrationEvent, ShoppingCartChangePriceIntegrationEventHandler>();
+            eventBus.Subscribe<PricingOnPriceChange, ShoppingCartChangePriceIntegrationEventHandler>();
         }
     }
 }

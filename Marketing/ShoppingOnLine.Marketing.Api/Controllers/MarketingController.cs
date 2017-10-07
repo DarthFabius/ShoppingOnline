@@ -39,7 +39,6 @@ namespace ShoppingOnLine.Marketing.Api.Controllers
         [HttpPost("update")]
         public IActionResult Update([FromBody]UpdatePrice value)
         {
-            _repository.UpdatePrice(value);
             return Ok();
         }
 

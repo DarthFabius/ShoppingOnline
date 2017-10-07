@@ -25,7 +25,7 @@ namespace ShoppingOnline.DomainModel.Context
         public T CreateDbContext(string[] args)
         {
             var builder = new DbContextOptionsBuilder<T>();
-            builder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            builder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ShoppingOnLine;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             var dbContext = (T)Activator.CreateInstance(
                 typeof(T),
                 builder.Options);
