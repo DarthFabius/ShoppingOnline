@@ -13,5 +13,11 @@ namespace System.Net.Http
             var contentJson = JsonConvert.SerializeObject(value);
             return httpClient.PostAsync(requestUri, new StringContent(contentJson));
         }
+
+        public static Task<HttpResponseMessage> PutAsJsonAsync<T>(this HttpClient httpClient, string requestUri, T value)
+        {
+            var contentJson = JsonConvert.SerializeObject(value);
+            return httpClient.PutAsync(requestUri, new StringContent(contentJson));
+        }
     }
 }

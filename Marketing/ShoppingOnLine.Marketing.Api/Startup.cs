@@ -45,6 +45,7 @@ namespace ShoppingOnLine.Marketing.Api
             services.AddTransient<MarketingApiRepository>();
 
             services.AddDbInfoContext<DbSellingInfoContext>(Configuration.GetConnectionString("DefaultConnection"));
+            services.AddDbInfoContext<DbProductsContext>(Configuration.GetConnectionString("DefaultConnection"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

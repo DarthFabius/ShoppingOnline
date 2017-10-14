@@ -1,0 +1,27 @@
+﻿@page "{ProductId:int}"
+@model UpdateModel
+@{
+}
+
+
+
+<div class="row">
+    <div class="col-md-7">
+        <form method="post">
+            <h4>Update Price</h4>
+            <hr />
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DataModel.ShortDescription"></label>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataModel.Amount"></label>
+                <input asp-for="DataModel.Amount" class="form-control" />
+                <span asp-validation-for="DataModel.Amount" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-default right">Save</button>
+            <a class="btn btn-default" asp-page="index">Go Back</a>
+            <input type="hidden" asp-for="DataModel.ProductId" />
+        </form>
+    </div>
+</div>

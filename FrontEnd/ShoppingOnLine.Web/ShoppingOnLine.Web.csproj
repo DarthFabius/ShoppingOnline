@@ -14,4 +14,9 @@
     <Folder Include="Pages\Marketing\" />
     <Folder Include="Pages\Pricing\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Marketing\ShoppingOnLine.Marketing.Api.Model\ShoppingOnLine.Marketing.Api.Model.csproj" />
+    <ProjectReference Include="..\..\Pricing\ShoppingOnLine.Pricing.Api.Model\ShoppingOnLine.Pricing.Api.Model.csproj" />
+    <ProjectReference Include="..\..\ShoppingOnline.DomainModel\ShoppingOnline.DomainModel.csproj" />
+  </ItemGroup>
 </Project>

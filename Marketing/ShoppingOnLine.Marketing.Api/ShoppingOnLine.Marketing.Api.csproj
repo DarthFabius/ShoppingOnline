@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Model\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
@@ -24,6 +25,7 @@
     <ProjectReference Include="..\..\ShoppingOnline.DataAccess\ShoppingOnline.DataAccess.csproj" />
     <ProjectReference Include="..\..\ShoppingOnline.DomainModel\ShoppingOnline.DomainModel.csproj" />
     <ProjectReference Include="..\..\ShoppingOnLine.Pricing.Api.Event\ShoppingOnLine.Pricing.Api.Event.csproj" />
+    <ProjectReference Include="..\ShoppingOnLine.Marketing.Api.Model\ShoppingOnLine.Marketing.Api.Model.csproj" />
   </ItemGroup>
 
 </Project>

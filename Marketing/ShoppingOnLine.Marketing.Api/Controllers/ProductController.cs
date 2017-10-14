@@ -23,5 +23,15 @@ namespace ShoppingOnLine.Marketing.Api.Controllers
         {
             return _repository.getAllProduct();
         }
+        // GET: /<controller>/id
+        [HttpGet("{id}")]
+        public IEnumerable<ProductDetail> Get(int id)
+        {
+            return _repository.getProducts(new List<int>() { id });
+        }
+
+        // PUT api/pricing/5
+       
+
     }
 }

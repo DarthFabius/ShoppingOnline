@@ -54,16 +54,43 @@ namespace ShoppingOnLine.Pricing.Api.Repository
 
         public bool DeletePrice(int ProductId)
         {
+            var price = _db.SellingoInfos.Where(p => p.ProductId.Equals(ProductId)).ToList();
+            try
+            {
+                _db.Remove(price);
+                _db.SaveChanges();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            
             return true;
         }
 
         public IEnumerable<DetailPrice> GetPrice()
         {
-            return GetPrice(null);
+            var prices = _db.SellingoInfos.ToList();
+
+            return (from i in prices
+                    select new DetailPrice()
+                    {
+                        ProductId = i.ProductId,
+                        Price = i.Amount,
+                        Currency = i.Currency
+                    }).ToList();
         }
         public IEnumerable<DetailPrice> GetPrice(IEnumerable<int> ProductIds)
         {
-            return null;
+            var prices = _db.SellingoInfos.Where(p => ProductIds.Contains(p.ProductId)).ToList();
+
+            return (from i in prices
+                    select new DetailPrice()
+                    {
+                        ProductId = i.ProductId,
+                        Price = i.Amount,
+                        Currency = i.Currency
+                    }).ToList();
         }
         
     }

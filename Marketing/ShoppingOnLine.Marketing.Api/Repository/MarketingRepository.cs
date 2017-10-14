@@ -25,11 +25,25 @@ namespace ShoppingOnLine.Marketing.Api.Repository
             return _db.Products.ToList().Select( p => {
                     return new ProductDetail()
                     {
+                        Id = p.Id,
                         Description = p.Description,
                         ShortDescription = p.ShortDescription,
                         Properties = p.Properties
                     };
                 }).ToList();
+        }
+
+        public IEnumerable<ProductDetail> getProducts(IEnumerable<int> id)
+        {
+            return _db.Products.Where(w => id.Contains(w.Id)).ToList().Select(p => {
+                return new ProductDetail()
+                {
+                    Id = p.Id,
+                    Description = p.Description,
+                    ShortDescription = p.ShortDescription,
+                    Properties = p.Properties
+                };
+            }).ToList();
         }
     }
 }

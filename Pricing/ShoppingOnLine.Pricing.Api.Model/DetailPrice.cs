@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ShoppingOnline.DomainModel;
 
 namespace ShoppingOnLine.Pricing.Api.Model
 {
@@ -9,5 +10,6 @@ namespace ShoppingOnLine.Pricing.Api.Model
     {
         public int ProductId { get; set; }
         public decimal Price { get; set; }
+        public CurrencyType Currency { get; set; }
     }
 }

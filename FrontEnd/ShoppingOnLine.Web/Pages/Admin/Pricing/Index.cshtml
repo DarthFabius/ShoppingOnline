@@ -1,0 +1,30 @@
+﻿@page
+@model IndexModel
+@{
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Descrizione breve</th>
+            <th>Prezzo</th>
+            <th>Valuta</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.DataModel)
+        {
+            <tr>
+                <td>@item.ShortDescription</td>
+                <td>@item.Amount</td>
+                <td>@item.Currency.ToString()</td>
+                <td>
+                <a asp-page="Update" asp-route-ProductId="@item.ProductId">Modify</a> <a asp-page="Remove" asp-route-ProductId="@item.ProductId">Remove</a>
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>

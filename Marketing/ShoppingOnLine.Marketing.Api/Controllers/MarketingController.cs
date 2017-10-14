@@ -31,13 +31,13 @@ namespace ShoppingOnLine.Marketing.Api.Controllers
 
         // POST api/Marketing/insert
         [HttpPost("insert")]
-        public void Insert([FromBody]InsertProduct value)
+        public void Insert([FromBody]object value)
         {
 
         }
 
         [HttpPost("update")]
-        public IActionResult Update([FromBody]UpdatePrice value)
+        public IActionResult Update([FromBody]object value)
         {
             return Ok();
         }
