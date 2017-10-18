@@ -94,8 +94,6 @@ namespace ShoppingOnLine.Web.Infrastructure
         {
             endPoint = endPoint.Add($"/{id}");
 
-            _client.DefaultRequestHeaders.Accept.Clear();
-            _client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             _client.BaseAddress = new Uri(_baseAddress);
 
             HttpResponseMessage response = await _client.PutAsJsonAsync<TRequest>(endPoint, request);

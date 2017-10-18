@@ -11,6 +11,7 @@ using Microsoft.Extensions.Options;
 using ShoppingOnLine.Pricing.Api.Event;
 using ShoppingOnLine.EventBus.Abstraction;
 using ShoppingOnLine.ShoppingCart.Api.Event;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace ShoppingOnLine.ShoppingCart.Api
 {
@@ -29,6 +30,10 @@ namespace ShoppingOnLine.ShoppingCart.Api
             services
                 .AddRabbitMQServiceBus("localhost")
                 .AddInMemorySubscriptionManager();
+
+            services.AddSingleton<IIntegrationEventHandler<PricingOnPriceChange>, ShoppingCartChangePriceIntegrationEventHandler >();
+            //services.AddSingleton<PricingOnPriceChange>();
+
 
             services.AddCors(options =>
             {

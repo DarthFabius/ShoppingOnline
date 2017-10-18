@@ -24,8 +24,7 @@ namespace ShoppingOnLine.EventBus.RabbitMQ
         private IRabbitMQPersistentConnection _persistentConnection;
         private ILogger<EventBusRabbitMQ> _logger;
         private IEventBusSubscriptionsManager _subsManager;
-        private IEnumerable<IDynamicIntegrationEventHandler> _dynamicIntegrationEventHandler;
-        private IEnumerable<IIntegrationEventHandler> _integrationEventHandler;
+        private IServiceProvider _serviceProvider;
 
         private IModel _consumerChannel;
         private string _queueName;
@@ -33,15 +32,14 @@ namespace ShoppingOnLine.EventBus.RabbitMQ
         public EventBusRabbitMQ(IRabbitMQPersistentConnection persistentConnection, 
                                 ILogger<EventBusRabbitMQ> logger,
                                 IEventBusSubscriptionsManager subsManager,
-                                IEnumerable<IDynamicIntegrationEventHandler> dynamicIntegrationEventHandler,
-                                IEnumerable<IIntegrationEventHandler> integrationEventHandler)
+                                IServiceProvider serviceProvider
+            )
         {
             _persistentConnection = persistentConnection;
             _logger = logger;
             _subsManager = subsManager;
             _consumerChannel = CreateConsumerChannel();
-            _dynamicIntegrationEventHandler = dynamicIntegrationEventHandler;
-            _integrationEventHandler = integrationEventHandler;
+            _serviceProvider = serviceProvider;
 
             _subsManager.OnEventRemoved += SubsManager_OnEventRemoved;
         }
@@ -121,8 +119,8 @@ namespace ShoppingOnLine.EventBus.RabbitMQ
                     {
                         var eventType = _subsManager.GetEventTypeByName(eventName);
                         var integrationEvent = JsonConvert.DeserializeObject(message, eventType);
-                        var handler = ResolveObjectIntegration(subscription.HandlerType);
                         var concreteType = typeof(IIntegrationEventHandler<>).MakeGenericType(eventType);
+                        var handler = _serviceProvider.GetService(concreteType);
                         await (Task)concreteType.GetMethod("Handle").Invoke(handler, new object[] { integrationEvent });
                     }
                 }
@@ -131,12 +129,12 @@ namespace ShoppingOnLine.EventBus.RabbitMQ
 
         private IDynamicIntegrationEventHandler ResolveObjectDynamicIntegration(Type type)
         {
-            return _dynamicIntegrationEventHandler.Where(p => p.GetType().Name.Equals(type.Name)).Single<IDynamicIntegrationEventHandler>();
+            return (IDynamicIntegrationEventHandler)_serviceProvider.GetService(type);
         }
 
-        private IIntegrationEventHandler ResolveObjectIntegration(Type type)
+        private IIntegrationEventHandler ResolveObjectIntegrationHandler(Type type)
         {
-            return _integrationEventHandler.Where(p => p.GetType().Name.Equals(type.Name)).Single<IIntegrationEventHandler>();
+            return (IIntegrationEventHandler)_serviceProvider.GetService(type);
         }
 
         public void Dispose()
