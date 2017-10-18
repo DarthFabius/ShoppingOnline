@@ -12,7 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ShoppingOnline.DataAccess\ShoppingOnline.DataAccess.csproj" />
     <ProjectReference Include="..\ShoppingOnline.DomainModel\ShoppingOnline.DomainModel.csproj" />
   </ItemGroup>
 
