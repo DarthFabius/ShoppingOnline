@@ -22,7 +22,6 @@
     <ProjectReference Include="..\..\EventBus\ShoppingOnLine.EventBus.Abstraction\ShoppingOnLine.EventBus.Abstraction.csproj" />
     <ProjectReference Include="..\..\EventBus\ShoppingOnLine.EventBus.InMemorySubscription\ShoppingOnLine.EventBus.InMemorySubscription.csproj" />
     <ProjectReference Include="..\..\EventBus\ShoppingOnLine.EventBus.RabbitMQ\ShoppingOnLine.EventBus.RabbitMQ.csproj" />
-    <ProjectReference Include="..\..\ShoppingOnline.DataAccess\ShoppingOnline.DataAccess.csproj" />
     <ProjectReference Include="..\..\ShoppingOnline.DomainModel\ShoppingOnline.DomainModel.csproj" />
     <ProjectReference Include="..\..\ShoppingOnLine.Pricing.Api.Event\ShoppingOnLine.Pricing.Api.Event.csproj" />
     <ProjectReference Include="..\ShoppingOnLine.Marketing.Api.Model\ShoppingOnLine.Marketing.Api.Model.csproj" />
