@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 
 namespace ShoppingOnLine.Web.Infrastructure
 {
-    public class PricingClient:ApiClient
+    public class ShoppingCartClient:ApiClient
     {
-        public PricingClient()
-            :base("http://localhost:49851/", "/Api/Pricing")
+        public ShoppingCartClient():
+            base("http://localhost:52436/", "/Api/ShoppingCart")
         {
-            
+
         }
     }
 }

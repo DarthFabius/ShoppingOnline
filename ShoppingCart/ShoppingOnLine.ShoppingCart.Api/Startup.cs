@@ -34,6 +34,16 @@ namespace ShoppingOnLine.ShoppingCart.Api
             services.AddSingleton<IIntegrationEventHandler<PricingOnPriceChange>, ShoppingCartChangePriceIntegrationEventHandler >();
             //services.AddSingleton<PricingOnPriceChange>();
 
+            services.AddSingleton<ShoppingCart.Api.Model.Cart>(cart => 
+            {
+                return new Model.Cart()
+                {
+                    Items = new List<Model.CartItem>(),
+                    CartId = 1,
+                    CreateDateTime = DateTime.Now,
+                    UserId = 1
+                };
+            });
 
             services.AddCors(options =>
             {

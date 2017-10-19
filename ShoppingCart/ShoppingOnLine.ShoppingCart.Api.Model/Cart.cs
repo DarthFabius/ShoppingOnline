@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ShoppingOnLine.ShoppingCart.Api.Model
 {
@@ -10,5 +8,6 @@ namespace ShoppingOnLine.ShoppingCart.Api.Model
         public int CartId { get; set; }
         public int UserId { get; set; }
         public DateTime CreateDateTime { get; set; }
+        public List<CartItem> Items { get; set; }
     }
 }

@@ -24,6 +24,7 @@ namespace ShoppingOnLine.Web
         {
             services.AddTransient<ProductClient>();
             services.AddTransient<PricingClient>();
+            services.AddTransient<ShoppingCartClient>();
             services.AddMvc();
         }
 

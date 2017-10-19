@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Model\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
@@ -21,6 +22,7 @@
     <ProjectReference Include="..\..\EventBus\ShoppingOnLine.EventBus.InMemorySubscription\ShoppingOnLine.EventBus.InMemorySubscription.csproj" />
     <ProjectReference Include="..\..\EventBus\ShoppingOnLine.EventBus.RabbitMQ\ShoppingOnLine.EventBus.RabbitMQ.csproj" />
     <ProjectReference Include="..\..\ShoppingOnLine.Pricing.Api.Event\ShoppingOnLine.Pricing.Api.Event.csproj" />
+    <ProjectReference Include="..\ShoppingOnLine.ShoppingCart.Api.Model\ShoppingOnLine.ShoppingCart.Api.Model.csproj" />
   </ItemGroup>
 
 </Project>
