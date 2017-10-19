@@ -31,7 +31,7 @@ namespace ShoppingOnLine.ShoppingCart.Api
                 .AddRabbitMQServiceBus("localhost")
                 .AddInMemorySubscriptionManager();
 
-            services.AddSingleton<IIntegrationEventHandler<PricingOnPriceChange>, ShoppingCartChangePriceIntegrationEventHandler >();
+            services.AddTransient<IIntegrationEventHandler<PricingOnPriceChange>, ShoppingCartChangePriceIntegrationEventHandler >();
             //services.AddSingleton<PricingOnPriceChange>();
 
             services.AddSingleton<ShoppingCart.Api.Model.Cart>(cart => 

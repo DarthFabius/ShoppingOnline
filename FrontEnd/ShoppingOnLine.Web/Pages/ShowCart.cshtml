@@ -1,0 +1,32 @@
+﻿@page
+@model ShowCartModel
+@{
+}
+
+<div class="row">
+    <h1>Shopping Cart</h1>
+
+    <div class="row">
+
+        <div class="row">
+            <div class="col-md-5"><strong>Descrizione</strong></div>
+            <div class="col-md-1"><strong>Quantità</strong></div>
+            <div class="col-md-2"><strong>Prezzo</strong></div>
+            <div class="col-md-2"><strong>Tot</strong></div>
+        </div>
+            @foreach (var item in Model.ShoppingCart.Items)
+            {
+                <div class="row">
+                    <div class="col-md-5">@item.Product?.Description?.Substring(0, 100)</div>
+                    <div class="col-md-1">@item.NumberOfProduct</div>
+                    <div class="col-md-2">@item.Price</div>
+                    <div class="col-md-2">@item.TotPrice</div>
+                </div>
+            }
+        <hr />
+        <div>
+            <div class="col-md-8 text-right">Totale carrello</div>        
+            <div class="col-md-2">@Model.ShoppingCart.Items.Select(p=>p.TotPrice).Sum()</div>
+        </div>
+    </div>
+</div>

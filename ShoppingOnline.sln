@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2002
+VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingOnline.DomainModel", "ShoppingOnline.DomainModel\ShoppingOnline.DomainModel.csproj", "{05C41AF9-EA2C-4428-92A2-0998482F266D}"
 EndProject
@@ -41,7 +41,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingOnLine.Pricing.Api.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingOnLine.Pricing.Api.Model", "Pricing\ShoppingOnLine.Pricing.Api.Model\ShoppingOnLine.Pricing.Api.Model.csproj", "{B9E8BE8F-18CF-4DD4-8AAA-18427552ABB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingOnLine.ShoppingCart.Api.Model", "ShoppingCart\ShoppingOnLine.ShoppingCart.Api.Model\ShoppingOnLine.ShoppingCart.Api.Model.csproj", "{97847850-7A4C-47F2-B3F3-9085C9BD319D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingOnLine.ShoppingCart.Api.Model", "ShoppingCart\ShoppingOnLine.ShoppingCart.Api.Model\ShoppingOnLine.ShoppingCart.Api.Model.csproj", "{97847850-7A4C-47F2-B3F3-9085C9BD319D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
