@@ -62,6 +62,15 @@ namespace ShoppingOnLine.ShoppingCart.Api.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            var itemToRemove = _cart.Items.Where(p => p.ProductId.Equals(id)).Single();
+            if (itemToRemove.NumberOfProduct > 1)
+            {
+                itemToRemove.NumberOfProduct--;
+            }
+            else
+            {
+                _cart.Items.Remove(itemToRemove);
+            }
         }
     }
 }

@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-md-5"><strong>Descrizione</strong></div>
             <div class="col-md-1"><strong>Quantità</strong></div>
-            <div class="col-md-2"><strong>Prezzo</strong></div>
+            <div class="col-md-1"><strong>Prezzo</strong></div>
             <div class="col-md-2"><strong>Tot</strong></div>
         </div>
             @foreach (var item in Model.ShoppingCart.Items)
@@ -19,8 +19,9 @@
                 <div class="row">
                     <div class="col-md-5">@item.Product?.Description?.Substring(0, 100)</div>
                     <div class="col-md-1">@item.NumberOfProduct</div>
-                    <div class="col-md-2">@item.Price</div>
+                    <div class="col-md-1">@item.Price</div>
                     <div class="col-md-2">@item.TotPrice</div>
+                    <div class="col-md-1"><a asp-page-handler="Remove" asp-route-ProductId="@item.ProductId">Remove</a></div>
                 </div>
             }
         <hr />

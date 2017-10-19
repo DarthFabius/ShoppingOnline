@@ -25,7 +25,7 @@ namespace ShoppingOnLine.Web.Pages
             _pricingClient = pricingClient;
         }
 
-        public async Task<IActionResult> OnGet()
+        public async Task<IActionResult> OnGetAsync()
         {
             var cart = await _shoppingCartClient.GetAsync<Cart>("1");
             var products = await _productClient.GetAsync<IEnumerable<ShoppingOnLine.Marketing.Api.Model.ProductDetail>>();
@@ -49,6 +49,13 @@ namespace ShoppingOnLine.Web.Pages
             };
 
             return Page();
+        }
+        
+
+        public async Task<IActionResult> OnGetRemoveAsync(int ProductId)
+        {
+            await _shoppingCartClient.DeleteAsync(ProductId.ToString());
+            return RedirectToPage("ShowCart");
         }
 
         public class ShoppingCartCart

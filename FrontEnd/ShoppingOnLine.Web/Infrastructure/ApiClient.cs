@@ -99,6 +99,22 @@ namespace ShoppingOnLine.Web.Infrastructure
             HttpResponseMessage response = await _client.PutAsJsonAsync<TRequest>(endPoint, request);
             response.EnsureSuccessStatusCode();
         }
+
+        public Task DeleteAsync(string id)
+        {
+            return DeleteAsync(_serviceName, id);
+        }
+
+        public async Task DeleteAsync(PathString endPoint, string id)
+        {
+            endPoint = endPoint.Add($"/{id}");
+
+            _client.BaseAddress = new Uri(_baseAddress);
+
+            HttpResponseMessage response = await _client.DeleteAsync(endPoint);
+            response.EnsureSuccessStatusCode();
+        }
+
         public void Dispose()
         {
             _client.Dispose();
